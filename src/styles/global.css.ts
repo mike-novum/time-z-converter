@@ -1,11 +1,11 @@
 import { assignVars, globalStyle } from "@vanilla-extract/css";
-import { darkThemeTokens, lightThemeTokens, themeContract } from "./theme.css";
+import { darkThemeTokens, themeContract } from "./theme.css";
 import { fontFamily } from "./fonts.css";
 
 globalStyle(":root", {
   "@media": {
     "(prefers-color-scheme: light)": {
-      vars: assignVars(themeContract, lightThemeTokens),
+      vars: assignVars(themeContract, darkThemeTokens),
     },
     "(prefers-color-scheme: dark)": {
       vars: assignVars(themeContract, darkThemeTokens),

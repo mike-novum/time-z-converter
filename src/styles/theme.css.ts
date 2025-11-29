@@ -96,10 +96,10 @@ export const themeContract = createGlobalThemeContract<
 export const lightThemeTokens: ThemeTokens = {
   colors: {
     background: "white",
-    backgroundGradient: "",
+    backgroundGradient: "linear-gradient(45deg, #c3c0ec, #c3c0ec00)",
     card: "#eae8ff",
     text: "#121212",
-    textSecondary: "#858585",
+    textSecondary: "#434366",
     invertedText: "white",
     accent: "#514df2",
     focus: "#9593f1",
@@ -124,11 +124,11 @@ export const lightThemeTokens: ThemeTokens = {
     border: " 1px solid rgba(255, 255, 255, 0.17)",
   },
   button: {
-    background: "rgb(36 36 36 / 9%)",
-    backgroundHover: " rgb(36 36 36 / 40%)",
+    background: "rgb(237 236 255)",
+    backgroundHover: "rgb(218 214 255)",
     boxShadow: "rgba(0, 0, 0, 0.1)",
-    border: "rgb(37 37 45)",
-    text: "#fff",
+    border: "rgb(195 195 229)",
+    text: "#000",
   },
 };
 

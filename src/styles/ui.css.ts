@@ -49,7 +49,7 @@ export const button = style({
     background: themeContract.button.backgroundHover,
   },
   ":active": {
-    opacity: 0.7,
+    opacity: "0.7!important",
   },
   ":focus-visible": {
     outlineWidth: "thin",
