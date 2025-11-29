@@ -5,3 +5,6 @@ export const startImage = style({
   height: 250,
   borderRadius: 16,
 });
+export const memeImage = style({
+  borderRadius: 16,
+});

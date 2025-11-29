@@ -12,8 +12,7 @@ export const converterSection = style({
 export const startSection = style({
   display: "flex",
   gap: 32,
-  opacity: 0,
-  minHeight: 480,
+  minHeight: "calc(100vh - 64px)",
   alignItems: "center",
   justifyContent: "center",
 });
@@ -29,11 +28,36 @@ export const contentBody = style({
 });
 
 export const infoSection = style({
+  position: "relative",
+  paddingTop: 64,
+  paddingBottom: 64,
+  marginBottom: 80,
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gridTemplateRows: "repeat(2, 1fr)",
+  gridColumnGap: 64,
+  gridRowGap: 64,
+});
+
+export const infoSectionLeftCell = style({
   display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 320,
-  gap: 32,
+  justifyContent: "flex-end",
+  // alignItems: "flex-end",
+});
+
+export const infoSectionRightCell = style({
+  display: "flex",
+  justifyContent: "flex-start",
+  // alignItems: "flex-end",
+});
+
+export const infoSectionLine = style({
+  position: "absolute",
+  background: "#25252e8f",
+  width: 2,
+  top: 0,
+  bottom: 0,
+  left: "calc(50% - 1px)",
 });
 
 export const glass = style({
@@ -49,6 +73,7 @@ export const infoCard = style({
   width: 256,
   padding: 16,
   fontWeight: 300,
+  height: "fit-content",
 });
 
 export const footer = style({

@@ -23,25 +23,46 @@ export default function App() {
   return (
     <>
       <main className={layoutStyles.contentBody}>
-        <motion.section
-          className={layoutStyles.startSection}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 1,
-          }}
-        >
+        <section className={layoutStyles.startSection}>
           <div>
-            <h1>Конвертор времени</h1>
-            <p className={ui.secondaryText}>
+            <motion.h1
+              initial={{ opacity: 0, translateX: "-50%" }}
+              whileInView={{ opacity: 1, translateX: "0%" }}
+              transition={{
+                duration: 0.4,
+              }}
+              viewport={{ once: true }}
+            >
+              Конвертор времени
+            </motion.h1>
+            <motion.p
+              className={ui.secondaryText}
+              initial={{ opacity: 0, translateX: "-50%" }}
+              whileInView={{ opacity: 1, translateX: "0%" }}
+              transition={{
+                duration: 0.4,
+                delay: 0.3,
+              }}
+              viewport={{ once: true }}
+            >
               Не понимаешь миллениалов?
               <br />
               Твой батя говорит ребусами когда спрашиваешь у него время?
               <br /> Мы поможем тебе с этим.
-            </p>
-            <button onClick={scrollToTarget} className={ui.button}>
+            </motion.p>
+            <motion.button
+              onClick={scrollToTarget}
+              className={ui.button}
+              initial={{ opacity: 0, translateX: "-50%" }}
+              whileInView={{ opacity: 1, translateX: "0%" }}
+              transition={{
+                duration: 0.4,
+                delay: 0.8,
+              }}
+              viewport={{ once: true }}
+            >
               Ближе к делу
-            </button>
+            </motion.button>
           </div>
           <motion.img
             className={imagesStyles.startImage}
@@ -54,7 +75,7 @@ export default function App() {
             src="/images/cat-clock-meme.png"
             alt="clock cat meme"
           />
-        </motion.section>
+        </section>
         <motion.section
           className={layoutStyles.infoSection}
           initial={{ opacity: 0 }}
@@ -62,28 +83,77 @@ export default function App() {
           transition={{
             duration: 1.7,
           }}
+          viewport={{ once: true }}
         >
-          <div className={`${layoutStyles.infoCard} ${layoutStyles.glass}`}>
-            <p>
-              Этот конвертор поможет тебе обсуждать время с миллениалами и
-              бумерами, и выкупать за стрелки на генеральских котлах
-            </p>
+          <div className={layoutStyles.infoSectionLeftCell}>
+            <motion.img
+              className={imagesStyles.memeImage}
+              src="/images/meme1.webp"
+              initial={{ opacity: 0, translateX: "-50%" }}
+              whileInView={{ opacity: 1, translateX: "0%" }}
+              transition={{
+                duration: 0.7,
+              }}
+              viewport={{ once: true }}
+            />
           </div>
-          <div className={`${layoutStyles.infoCard} ${layoutStyles.glass}`}>
-            <p>
-              Введи часы и минуты и ультани коронной фразой в компании
-              стрелкоебов. Слови респекты от своего бати или деда.
-            </p>
+          <div className={layoutStyles.infoSectionRightCell}>
+            <motion.div
+              className={`${layoutStyles.infoCard} ${layoutStyles.glass}`}
+              initial={{ opacity: 0, translateX: "50%" }}
+              whileInView={{ opacity: 1, translateX: "0%" }}
+              transition={{
+                duration: 0.7,
+              }}
+              viewport={{ once: true }}
+            >
+              <p>
+                Этот конвертор поможет тебе обсуждать время с миллениалами и
+                бумерами, и выкупать за стрелки на генеральских котлах
+              </p>
+            </motion.div>
           </div>
+          <div className={layoutStyles.infoSectionLeftCell}>
+            <motion.div
+              className={`${layoutStyles.infoCard} ${layoutStyles.glass}`}
+              initial={{ opacity: 0, translateX: "-50%" }}
+              whileInView={{ opacity: 1, translateX: "0%" }}
+              transition={{
+                duration: 0.7,
+                delay: 0.4,
+              }}
+              viewport={{ once: true }}
+            >
+              <p>
+                Введи часы и минуты и ультани коронной фразой в компании
+                стрелкоебов. Слови респекты от своего бати или деда.
+              </p>
+            </motion.div>
+          </div>
+          <div className={layoutStyles.infoSectionRightCell}>
+            <motion.img
+              className={imagesStyles.memeImage}
+              src="/images/meme2.webp"
+              initial={{ opacity: 0, translateX: "50%" }}
+              whileInView={{ opacity: 1, translateX: "0%" }}
+              transition={{
+                duration: 0.7,
+                delay: 0.4,
+              }}
+              viewport={{ once: true }}
+            />
+          </div>
+          <div className={layoutStyles.infoSectionLine} />
         </motion.section>
         <motion.div
           className={`${layoutStyles.converterSection} ${layoutStyles.glass}`}
           ref={targetRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.7 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 1,
           }}
+          viewport={{ once: true }}
         >
           <input
             className={ui.timeInput}

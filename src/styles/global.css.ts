@@ -33,7 +33,7 @@ globalStyle("body", {
   display: "flex",
   justifyContent: "center",
   placeItems: "center",
-  minWidth: "320px",
+  minWidth: 320,
   minHeight: "100vh",
 });
 
