@@ -1,3 +1,6 @@
+import { motion } from "motion/react";
+import * as styles from "./styles/clock.css";
+
 interface ClockProps {
   time: string;
 }
@@ -15,20 +18,7 @@ export function Clock({ time }: ClockProps) {
   }
 
   return (
-    <div
-      style={{
-        width: "300px",
-        height: "300px",
-        border: "6px solid #333",
-        borderRadius: "50%",
-        position: "relative",
-        margin: "2rem auto",
-        backgroundColor: "#fff",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className={styles.container}>
       {numbers.map((num) => {
         const angle = (num % 12) * 30;
         const rad = (angle * Math.PI) / 180;
@@ -39,71 +29,34 @@ export function Clock({ time }: ClockProps) {
         return (
           <div
             key={num}
+            className={styles.hourNumber}
             style={{
-              position: "absolute",
-              fontSize: "18px",
-              fontWeight: "bold",
-              color: "#333",
-              width: "24px",
-              height: "24px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
               transform: `translate(${x}px, ${y}px)`,
-              userSelect: "none",
             }}
           >
             {num}
           </div>
         );
       })}
-
-      {/* Hour arrow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          width: "6px",
-          height: "60px",
-          backgroundColor: "#333",
-          transformOrigin: "bottom center",
-          transform: `translate(-50%, -100%) rotate(${hourAngle}deg)`,
-          borderRadius: "4px",
-          zIndex: 2,
+      <motion.div
+        transition={{
+          duration: 0.5,
         }}
-      ></div>
-
-      {/* Minute arrow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          width: "4px",
-          height: "100px",
-          backgroundColor: "#666",
-          transformOrigin: "bottom center",
-          transform: `translate(-50%, -100%) rotate(${minuteAngle}deg)`,
-          borderRadius: "4px",
-          zIndex: 1,
+        animate={{ rotate: hourAngle, translateX: "-50%", translateY: "-100%" }}
+        className={styles.hourArrow}
+      />
+      <motion.div
+        transition={{
+          duration: 0.5,
         }}
-      ></div>
-
-      {/* Центральная точка */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          width: "12px",
-          height: "12px",
-          backgroundColor: "#000",
-          borderRadius: "50%",
-          transform: "translate(-50%, -50%)",
-          zIndex: 3,
+        animate={{
+          rotate: minuteAngle,
+          translateX: "-50%",
+          translateY: "-100%",
         }}
-      ></div>
+        className={styles.minuteArrow}
+      />
+      <div className={styles.centralDot} />
     </div>
   );
 }
